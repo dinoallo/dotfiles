@@ -4,5 +4,6 @@ X/.Xauthority
 X/.xbindkeysrc
 X/.xsession-errors
 X/.xscreensaver
+vim/.vim/autoload
 *~
 \#*
