@@ -1,0 +1,26 @@
+# Turn off the welcome message
+startup_message off
+# Change the command key
+escape ``
+# Use 256 colors
+term xterm
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
+# Disable visual bell
+vbell off
+# Set scrollback buffer to 10000
+defscrollback 10000
+# Fix for residual editor text
+altscreen on
+# Fix for name coloumn in windowlist only show bash
+windowlist string "%4n %h%=%f"
+# Customize the status line
+hardstatus alwayslastline
+caption string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+# caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+
+backtick 1 5 5 true
+termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+hardstatus string "screen (%n: %t)"
+caption always 

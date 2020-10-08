@@ -1,0 +1,69 @@
+# shells
+alias bashconfig="~/.bashrc"
+alias ohmybash="~/.oh-my-bash"
+alias zshconfig="~/.zshrc"
+alias onmyzsh="~/.on-my-zsh"
+
+alias enw="emacs -nw"
+alias realias="$EDITOR ~/.aliases; source ~/.aliases"
+alias clr="clear"
+alias sxiv="~/bin/sxiv.sh"
+
+# Some deprecated utilities in net-tools on Arch Linux
+alias arp="echo 'Deprecated command! Use ip neighbor instead.'"
+alias ifconfig="echo 'Deprecated command! Use ip link instead.'"
+alias netstat="echo 'Deprecated command! Use ss instead.'"
+alias route="echo 'Deprecated command! Use ip route instead.'"
+
+# My useful aliases
+alias books="cd ~/Documents/books"
+alias homework="cd ~/Documents/homework"
+
+# Handy Bash Shell Aliases
+## source: https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+# Control ls command output
+
+## colorize the ls output 
+alias ls='ls --color=auto'
+
+## use a long listing format
+alias ll='ls -la'
+
+## show hidden files
+alias l.='ls -d .* --color=auto'
+
+#Control cd command behavior
+
+## get rid of command not found
+alias cd..='cd ..'
+
+## a quick way to get out of current directory
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+# Start calculator with math support
+alias bc='bc -l'
+
+# Make mount command output pretty and human readable format
+alias mount='mount |column -t'
+
+# Control output of networking tool called ping
+alias ping='ping -c 5'
+
+# Show open ports
+alias ports='ss -tulanp'
+
+# Prevent me from doing stupid things
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Remote server
+alias myserver='ssh -i $SSH_KEY_PATH root@${REMOTE_SERVER}'
+
+# Perl
+alias reperl='perl -de0'
+alias pmver="perl -le '\$m = shift; eval qq(require \$m) or die qq(module \"\$m\" is not installed\\n); print \$m->VERSION'"

@@ -1,0 +1,37 @@
+#! /bin/sh
+# https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1
+
+bspc monitor eDP1 -d I II III IV V VI VII
+bspc monitor HDMI1 -d I II III IV V VI VII
+bspc config border_width         2
+bspc config window_gap          12
+bspc config top_padding         35
+bspc config bottom_padding       2
+bspc config right_padding        2
+bspc config left_padding         2
+
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+
+bspc rule -a Display state=floating
+
+bspc rule -a Nightly state=tiled
+## for pop_ups
+bspc config external_rules_command "~/.config/bspwm/external_rules"
+bspc rule -a Emacs state=tiled
+bspc rule -a Code - OSS state=tiled
+
+# set key bindings with sxhkd
+sxhkd &
+
+# set background image with feh
+~/.fehbg &
+
+# change default x shaped cursor
+xsetroot -cursor_name left_ptr
+
+# launch polybar
+~/.config/polybar/launch.sh

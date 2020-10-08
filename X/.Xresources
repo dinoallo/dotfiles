@@ -1,0 +1,101 @@
+!general
+*.foreground:   #c8c8d2
+*.background:   #1a1d36
+*.cursorColor:  #c8c8d2
+
+! black
+*.color8:       #373b41
+*.color0:       #2c2e31
+
+! red
+*.color9:       #cc6666
+*.color1:       #9e4f4f
+
+! green
+*.color10:       #b5bd68
+*.color2:      #959c52
+
+! yellow
+*.color11:       #f0c674
+*.color3:      #897246
+
+! blue
+*.color12:       #81a2be
+*.color4:      #546a7d
+
+! magenta
+*.color13:       #b294bb
+*.color5:      #7d6b82
+
+! cyan
+*.color14:       #8abeb7
+*.color6:      #486a65
+
+! white
+*.color15:       #c5c8c6
+*.color7:      #636664
+!urxvt
+URxvt.geometry:100x40
+URxvt.fullScreen:false
+URxvt.depth: 32
+URxvt.termName: rxvt-unicode
+! URxvt*inheritPixmap: true
+! URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+! URxvt*shading: 30
+
+! color
+URxvt.background: rgba:1300/1500/2600/c800
+URxvt.foreground: rgb:d3/d3/d3
+URxvt.colorIT: #87af5f
+URxvt.colorBD: #d7d7d7
+URxvt.colorUL: #87afd7
+
+! fonts
+URxvt.font: xft:JetbrainsMono:pixelsize=21,\
+            xft:Noto Sans Mono CJK TC:pixelsize=21:antialias=true,\
+	    xft:Noto Sans Mono CJK SC:pixelsize=21:antialias=true,\
+            xft:Inconsolata for Powerline:pixelsize=21:antialias=true, \
+            xft:Noto Color Emoji:pixelsize=21:antialias=true
+URxvt.boldFont: xft:JetbrainsMono:pixelsize=21:antialias=true,\
+                xft:Noto Sans Mono CJK TC:pixelsize=21:antialias=true,\
+	        xft:Noto Sans Mono CJK SC:pixelsize=21:antialias=true,\
+                xft:Inconsolata for Powerline:pixelsize=21:antialias=true, \
+                xft:Noto Color Emoji:pixelsize=21:antialias=true
+URxvt.italicFont: xft:JetbrainsMono:pixelsize=21:antialias=true,\
+                  xft:Noto Sans Mono CJK TC:pixelsize=21:antialias=true,\
+	          xft:Noto Sans Mono CJK SC:pixelsize=21:antialias=true,\
+                  xft:Inconsolata for Powerline:pixelsize=21:antialias=true, \
+                  xft:Noto Color Emoji:pixelsize=21:antialias=true
+URxvt.letterSpace: 0.5
+! scrollbar style
+URxvt.scrollstyle: plain
+
+!perl-extension
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,resize-font
+!!url-select
+URxvt.url-select.launcher: /usr/bin/firefox-nightly
+URxvt.url-select.underline: true
+!!keyboard-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+!!clipboard
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+!! resize-font
+URxvt.resize-font.smaller: M-k
+URxvt.resize-font.bigger: M-j
+!! tabs
+
+URxvt.tabbed.tabbar-fg: 13
+URxvt.tabbed.tabbar-bg: 8
+URxvt.tabbed.tab-fg: 9
+URxvt.tabbed.tab-bg: 8
+URxvt.tabbed.active-fg: 9
+URxvt.tabbed.actives-fg: 15
+URxvt.tabbed.actived-fg: 13
+URxvt.tabbed.title: false
+URxvt.tabbed.title-fg: 15
+URxvt.tabbed.title-bg: 8

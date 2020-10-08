@@ -1,0 +1,29 @@
+#!/bin/sh
+
+## set default font
+export font="${font:-Noto Sans CJK TC-14}"
+
+## set normal background color
+export nbg_color="${bg_color:-#282a36}"
+
+## set normal foreground color
+export nfg_color="${fg_color:-#f8f8f2}"
+
+## set selected background color
+export sbg_color="${sbg_color:-#44475a}"
+
+## set selected foreground color
+export sfg_color="${sfg_color:-#6272a4}"
+
+## set the number of options in the menu
+number_of_options="${number_of_options:-20}"
+
+#default menu to select an option
+option=`echo ${options:-'There is nothing...'} | dmenu -i \
+-p "${title:-What do you want to do?}" \
+-fn "${font}" \
+-nb "${nbg_color}" \
+-nf "${nfg_color}" \
+-sb "${sbg_color}" \
+-sf "${sfg_color}" `
+# -l ${number_of_options} \

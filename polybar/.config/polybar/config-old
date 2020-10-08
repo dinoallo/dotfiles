@@ -1,0 +1,348 @@
+[colors]
+;;background = #1f223d
+;;background = #2b3057
+background = #1a1d36
+background-alt = #44475a
+foreground = #f8f8f2
+foreground-alt = #6272a4
+primary = #f8f8f2
+secondary = #c8c8d2
+alert = #f1fa8c
+active = {active}
+inactive = {inactive}
+highlight = #8be9fd
+error = #ff5555
+
+[settings]
+format-underline = ${colors.secondary}
+[bar/top]
+monitor = ${env:MONITOR:}
+font-0 = Hack:pixelsize=10;1
+font-1 = Font Awesome 5 Free Regular:size=10;2
+font-2 = Font Awesome 5 Free Solid:size=10;3
+font-3 = Font Awesome 5 Brands Regular:size=10;4
+font-4 = Noto Sans CJK TC:pixelsize=10; for rendering Chinese and Japanese characters.
+monitor-strict = false
+override-redirect = false
+bottom = false
+fixed-center = false
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+radius = 0
+line-size = 3
+line-color = #000000
+
+border-size = 0
+border-color = #000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-left = bspwm
+
+modules-center = xwindow
+
+modules-right = pulseaudio cpu memory wireless-network wired-network battery date xkeyboard
+
+tray-position = right
+tray-padding = 0
+tray-maxsize = 14
+tray-background = ${colors.background}
+
+wm-restack = bspwm
+
+;override-redirect = true
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/date]
+type = internal/date
+interval = 1
+
+format = <label>
+format-prefix = 
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+label-padding = 1
+label-foreground = ${colors.foreground}
+label = %date% %time%
+
+date = %m-%d
+
+time = %H:%M %p
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+interval = 10
+fixed-values = true
+spacing = 1
+
+format-mounted = <label-mounted>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+label-mounted = %used% / %total%
+label-mounted-padding = 1
+label-mounted-foreground = ${colors.foreground}
+label-mounted-background = ${colors.background}
+
+[module/xwindow]
+type=internal/xwindow
+
+format=<label>
+
+label="%title%"
+label-foreground=${colors.foreground}
+label-padding = 1
+label-maxlen = 50
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+
+label-volume = "%percentage%%"
+label-volume-foreground = ${colors.foreground}
+
+label-muted = 
+label-muted-padding = 1
+label-muted-foreground = ${colors.foreground-alt}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+format=<label-layout><label-indicator>
+
+label-layout =  %name%
+label-indicator-on = %name%
+label-indicator-on-padding-right = 1
+label-indicator-on-padding-left = 1
+label-indicator-on-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging =  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+label-charging = %percentage%%
+
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/sep]
+type = custom/text
+
+content = "|"
+
+[module/space]
+type = custom/text
+
+content = " "
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+
+format = <label-state>[<label-mode>]
+
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+;;label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+label-monocle = m
+label-pseudotiled = T
+label-floating = s
+label-fullscreen = f
+
+label-marked = m
+label-marked-foreground = #a6f6c6
+label-locked = x
+label-locked-foreground = #a6f6c6
+label-sticky = y
+label-sticky-foreground = #a6f6c6
+label-private = z
+label-private-foreground = #a6f6c6
+
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+
+format = <label>
+label = cpu %percentage%%
+
+[module/memory]
+type = internal/memory
+
+format = <label>
+
+label = %gb_used%
+
+[module/temperature]
+type = internal/temperature
+
+format = <label>
+format-warn = <label-warn>
+
+label = %temperature-c%
+label-padding-right = 1
+
+label-warn = ! %temperature-c%
+label-warn-padding-right = 1
+label-warn-foreground = ${colors.alert}
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open ="[I/O]"
+label-open-padding = 1
+label-open-font = 0
+label-open-background = ${colors.background}
+label-open-foreground = ${colors.secondary}
+label-close = "[ X ]"
+label-close-padding-left = 1
+label-close-font = 0
+label-close-background = ${colors.background}
+label-close-foreground = ${colors.secondary}
+label-separator = "|"
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = Reboot
+menu-0-0-font = 0
+menu-0-0-exec = menu-open-1
+menu-0-1 = Power Off
+menu-0-1-font = 0
+menu-0-1-exec = menu-open-2
+menu-0-2 = Hibernate
+menu-0-2-font = 0
+menu-0-2-exec = menu-open-3
+menu-0-3 = Suspend
+menu-0-3-font = 0
+menu-0-3-exec = menu-open-4
+menu-0-4 = Lock
+menu-0-4-font = 0
+menu-0-4-exec = menu-open-5
+menu-0-5 = Logout
+menu-0-5-font = 0
+menu-0-5-exec = menu-open-6
+
+menu-1-0 = Reboot
+menu-1-0-font = 0
+menu-1-0-exec = systemctl reboot
+menu-1-1 = Cancel
+menu-1-1-font = 0
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = Power Off
+menu-2-0-font = 0
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = Cancel
+menu-2-1-font = 0
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = Hibernate
+menu-3-0-font = 0
+menu-3-0-exec = systemctl hibernate
+menu-3-1 = Cancel
+menu-3-1-font = 0
+menu-3-1-exec = menu-open-0
+
+menu-4-0 = Suspend
+menu-4-0-font = 0
+menu-4-0-exec = systemctl suspend
+menu-4-1 = Cancel
+menu-4-1-font = 0
+menu-4-1-exec = menu-open-0
+
+menu-5-0 = Lock
+menu-5-0-font = 0
+menu-5-0-exec = loginctl lock-session
+menu-5-1 = Cancel
+menu-5-1-font = 0
+menu-5-1-exec = menu-open-0
+
+menu-6-0 = Logout
+menu-6-0-font = 0
+menu-6-0-exec = kill -9 -1
+menu-6-1 = Cancel
+menu-6-1-font = 0
+menu-6-1-exec = menu-open-0
+
+[module/wired-network]
+type = internal/network
+interface = eno1
+
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =  D:%downspeed:min% U:%upspeed:min%
+label-connected-foreground = #eefafafa
+label-disconnected = 
+label-disconnected-foreground = #66ffffff
+
+accumulate-stats = true
+unknown-as-up = true
+label-padding-left = 1
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =  %essid% D:%downspeed:min% U:%upspeed:min%
+label-connected-foreground = #eefafafa
+label-disconnected = 
+label-disconnected-foreground = #66ffffff
+
+acumulate-stats = true
+unknown-as-up = true

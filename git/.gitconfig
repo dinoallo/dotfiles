@@ -1,0 +1,12 @@
+[sendmail]
+	smtpEncrption = tls
+	smtpServer = smtp.gamil.com
+	smtpUser = dinoallosaurus1111@gmail.com
+	smtpServerPort = 587
+[user]
+	email = dinoallosaurus1111@gmail.com
+	name = Allo
+[core]
+	editor = vim
+[submodule]
+	recurse = true

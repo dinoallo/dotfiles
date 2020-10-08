@@ -1,0 +1,8 @@
+private/
+emacs/
+X/.Xauthority
+X/.xbindkeysrc
+X/.xsession-errors
+X/.xscreensaver
+*~
+\#*

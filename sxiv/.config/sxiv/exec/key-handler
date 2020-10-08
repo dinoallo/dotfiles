@@ -1,0 +1,12 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+        "C-d")
+                trash-put "$file" ;;
+        "C-r")
+                convert -rotate 90 "$file" "$file" ;;
+        "C-w")
+            feh --bg-scale "$file" ;;
+        esac
+done
